@@ -11,6 +11,7 @@ def dh_list(file):
         result=[]
         for line in f.readlines():#readlines以列表输出文件内容
             line=line.replace(",","").replace("\n","")#改变元素，去掉，和换行符\n,tab键则把逗号换成"/t",空格换成" "
+            print(line)
             result.append(line)
     return result
 
