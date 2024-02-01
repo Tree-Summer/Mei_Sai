@@ -1,7 +1,24 @@
 [sheet,str]=xlsread('E:\code\meisai\source\Problem_C_Data_Wordle_5.xlsx');
 dist=sheet(:,17);
 dist=sort(dist);
-plot(dist);
+theta=linespace(0,1,1000)
+p_x_given_theta=theta.^x.*(1-theta).^x;
+p_theta_givenx=BayesRule(p_theta,p_x_given_theta);
+
+
+% pd=fitdist(dist,'Normal');
+% figure(1)
+% h(1).FaceColor = [.8 .8 1];
+% h(2).Color = [.2 .2 .2];
+% disp(pd)
+% x_values=0.4:0.01:0.8;
+% y=pdf(pd,x_values);
+% 
+% plot(x_values,y);
+% histfit(dist)
+%正态分布画图
+
+
 % %sheet是读入的excel表格的数字，str是单词
 % trydistribution=sheet(:,5:11);
 % Sum=sum(trydistribution,2);
